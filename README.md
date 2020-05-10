@@ -50,11 +50,47 @@
 ```
     require([module], callback);
 ```
-+ 如果这种规范的`require`实现上面`require`的代码就需要用到require.js,require.js就是AMD规范实现的一个库,**优点**是实现js文件的异步加载，避免网页失去响应；管理模块之间的依赖性，便于代码的编写和维护。
++ 如果这种规范的`require`实现上面`require`的代码就需要用到require.js,require.js就是AMD规范实现的一个库,**优点**是实现js文件的异步加载，避免网页失去响应；管理模块之间的依赖性，便于代码的编写和维护。详细参照 [requirejs教程](https://www.runoob.com/w3cnote/requirejs-tutorial-1.html)
 ```
-    require(['./01module.exports.js'],function(){
+    /*  
+        require.js源码 会定义四个变量：define,require，requirejs，xpcUtil：
+              其中require===requirejs,一般使用require更简短；
+              define 从名字就可以看出是个api，是用来定义一个模块；
+              require加载依赖模块，并执行加载完后的回调函数；
+    */
+    /*
+    
 
-    })
+    */
+    /*
+        require用法：
+        1. require用来加载一个模块，（注意require中的依赖是一个数组，即使只有一个依赖，你也必须使用数组来定义—）
+        2. 使用require加载js时，加载模块时不用写.js后缀的，写后缀会报错
+        requirejs(["js/a"]); // 等价于requirejs(["js/a"]);
+        1. require API的第二个参数是callback，用来处理加载完毕后的逻辑;
+            requirejs(["a"], function () {
+                alert('a.js加载完毕');
+            })
+        2. require加载一个文件,require.config用来排至模块加载的位置,可以将地址缩写为jquery;
+        3. paths可以配置多个路径，如果远程的cdn没有加载成功，可以加载另一个库;
+        4. callback函数中发现有$参数，这个就是依赖的jquery模块的输出变量，如果你依赖多个模块，可以依次写入多个参数使用：
+    */
+    require.config({
+        paths: {
+            // 'jquery': ["https://code.jquery.com", "http://libs.baidu.com/jquery/2.0.3/jquery"],
+            'jquery': ["http://libs.baidu.com/jquery/2.0.3/jquery"],
+            'a': 'js/a'
+        }
+    });
+
+    require(['jquery', 'a'], function ($) {
+        console.log($)
+        $(function () {
+            alert('jquery 加载完毕');
+        });
+    });
 ```
 
+#### 1.1.3 CMD <br/>  
++ seajs，就是遵循他提出的CMD规范，
 
