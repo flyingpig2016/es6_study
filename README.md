@@ -59,7 +59,7 @@
               require加载依赖模块，并执行加载完后的回调函数；
     */
     /*
-    
+
 
     */
     /*
@@ -93,4 +93,9 @@
 
 #### 1.1.3 CMD <br/>  
 + seajs，就是遵循他提出的CMD规范，
++ 参考http://blog.chinaunix.net/uid-26672038-id-4112229.html
+Sea.js 手册与文档
+https://www.zhangxinxu.com/sp/seajs/docs/zh-cn/module-definition.html
+慕课手记：
+http://www.imooc.com/article/19828
 

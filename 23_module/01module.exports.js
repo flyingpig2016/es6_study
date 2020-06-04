@@ -6,7 +6,7 @@ module.exports = {
         console.log(name);
     }
 };
-exports.job = 'teacher';
+// exports.job = 'teacher';
 console.log(module);
 console.log(module.exports);
 console.log(exports);

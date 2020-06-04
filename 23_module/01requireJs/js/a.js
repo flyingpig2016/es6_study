@@ -12,6 +12,8 @@
 http://blog.chinaunix.net/uid-26672038-id-4112229.html
 Sea.js 手册与文档
 https://www.zhangxinxu.com/sp/seajs/docs/zh-cn/module-definition.html
+慕课手记：
+http://www.imooc.com/article/19828
     AMD定义了一个自由变量或者说是全局变量define，用法
              define( id?, dependencies?, factory )
     1. id 为字符串类型，表示了模块标识，为可选参数。
