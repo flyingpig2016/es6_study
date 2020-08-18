@@ -24,43 +24,42 @@ http://www.imooc.com/article/19828
 
 */
 // 创建模块标识为 alpha 的模块，依赖于 require， export，和标识为 beta 的模块
-define('alpha', ['require', 'exports', 'beta'], function (require, exports, beta) {
-    exports.verb = function () {
-        return beta.verb();
-        // or:
-        // return require('beta').verb();
-    };
-});
+// define('alpha', ['require', 'exports', 'beta'], function (require, exports, beta) {
+//     exports.verb = function () {
+//         return beta.verb();
+
+//     };
+// });
 
 // 一个返回对象字面量的异步模块
-define(['alpha'], function (alpha) {
-    return {
-        verb: function () {
-            return alpha.verb() + 1;
-        }
-    };
-});
+// define(['alpha'], function (alpha) {
+//     return {
+//         verb: function () {
+//             return alpha.verb() + 1;
+//         }
+//     };
+// });
 
 // 无依赖模块可以直接使用对象字面量来定义
-define({
-    add: function (x, y) {
-        return x + y;
-    }
-});
+// define({
+//     add: function (x, y) {
+//         return x + y;
+//     }
+// });
 
 // 类似与 CommonJS 方式定义
-define(function (require, exports, module) {
-    let a = require('a');
-    let b = require('b');
+// define(function (require, exports, module) {
+//     let a = require('a');
+//     let b = require('b');
 
-    exports.action = function () { };
-});
+//     exports.action = function () { };
+// });
 
 // 引用require.js后的异步写法
-define(function () {
-    function fun1() {
-        alert('a.js加载中');
-    }
+// define(function () {
+//     function fun1() {
+//         alert('a.js加载中');
+//     }
 
-    fun1();
-});
+//     fun1();
+// });
